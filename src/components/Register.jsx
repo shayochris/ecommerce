@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import {AiOutlineClose} from 'react-icons/ai'
 
 export default function Register({ setRegister,setLogin }) {
   return (
     <div className='bg-black/50 fixed w-full h-full top-0 left-0 z-10 flex items-center justify-center'>
     <div className="container-sm bg-white p-2 rounded-lg">
         <div className='text-end'>
-            <button onClick={()=>setRegister(false)} className=''>close</button>
+            <button onClick={()=>setRegister(false)} className=''>
+                <AiOutlineClose className='h-8'/>
+            </button>
         </div>
         
         <div className="text-center">
@@ -30,7 +33,7 @@ export default function Register({ setRegister,setLogin }) {
                 <Link className='text-sm'>Forgot password?</Link>
             </div>
             <div className="my-4">
-                <button className="button bg-black w-full">Login</button>
+                <button className="button bg-black w-full">Register</button>
             </div>
             <div className="my-3 text-center text-sm">
                 <p>Already have an Account?

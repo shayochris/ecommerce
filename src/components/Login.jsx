@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { AiOutlineClose } from 'react-icons/ai'
 
 export default function Login({ setLogin,setRegister }) {
   return (
     <div className='bg-black/50 fixed w-full h-full top-0 left-0 z-10 flex items-center justify-center'>
         <div className="container-sm bg-white p-2 rounded-lg">
             <div className='text-end'>
-                <button onClick={()=>setLogin(false)} className=''>close</button>
+                <button onClick={()=>setLogin(false)} className=''>
+                    <AiOutlineClose className='h-8'/>
+                </button>
             </div>
             
             <div className="text-center">

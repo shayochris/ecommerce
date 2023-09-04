@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { AiOutlineMenu,AiOutlineShoppingCart,AiOutlineClose,AiOutlineSearch,AiOutlineLogin,AiOutlineHome} from 'react-icons/ai'
 export default function Navbar({ setLogin }) {
   const [mobilemenu,setmobilemenu]=useState(false)
   return (
@@ -21,26 +22,40 @@ export default function Navbar({ setLogin }) {
                     <button onClick={()=>setLogin(true)} className='navlink'>SignIn</button>
                 </li>
             </ul>
-            <button onClick={()=>setmobilemenu(true)} className='md:hidden'>menu</button>
+            <button onClick={()=>setmobilemenu(true)} className='md:hidden'>
+              <AiOutlineMenu className='h-8 w-6' />
+            </button>
 
             {/* mobile menu */}
             {mobilemenu && 
             <div onClick={()=>setmobilemenu(false)}
             className="md:hidden fixed top-0 left-0 bg-black/50 w-full h-full z-20">
-              <div className="bg-white w-[200px] h-full p-2">
-                <p className="logo">Logo</p>
-                <ul>
-                  <li>
-                    <Link className=''>cart</Link>
+              <div className="bg-white w-[300px] h-full p-2">
+                <div className="flex justify-between items-center">
+                  <p className="logo pb-2">Logo</p>
+                  <AiOutlineClose/>
+                </div>
+                <hr />
+                <ul className='mt-2'>
+                  <li className='py-1 text-lg'>
+                    <Link className='flex items-center'>
+                      <AiOutlineShoppingCart className='h-8 mr-1'/> <span>cart</span>
+                    </Link>
                   </li>
-                  <li>
-                    <Link className=''>search</Link>
+                  <li className='py-1 text-lg'>
+                    <Link className='flex items-center'>
+                      <AiOutlineSearch className='h-8 mr-1'/> <span>search</span>
+                    </Link>
                   </li>
-                  <li>
-                    <button onClick={()=>setLogin(true)} className=''>SignIn</button>
+                  <li className='py-1 text-lg' onClick={()=>setLogin(true)}>
+                    <Link className='flex items-center'>
+                      <AiOutlineLogin className='h-8 mr-1'/> <span>SignIn</span>
+                    </Link>
                   </li>
-                  <li>
-                    <Link className=''>about</Link>
+                  <li className='py-1 text-lg'>
+                    <Link className='flex items-center'>
+                      <AiOutlineHome className='h-8 mr-1'/> <span>cart</span>
+                    </Link>
                   </li>
                 </ul>
               </div>
