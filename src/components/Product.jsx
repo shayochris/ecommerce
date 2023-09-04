@@ -3,7 +3,8 @@ import Navbar from './Navbar'
 import pic5 from '../assets/images/pic5.jpg'
 import { Link } from 'react-router-dom'
 export default function Product() {
-    const [quantity,setQuantity]=useState(1)
+    const [quantity,setQuantity]=useState(1);
+    const price=250;
   return (
     <div className='container h-screen p-2'>
         <div className="my-4 h-full">
@@ -16,7 +17,7 @@ export default function Product() {
                 <div className='mt-3 flex-1'>
                     <p className='font-semibold text-xl'>product name</p>
                     <p className='text-sm'>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sunt, dolore! Sint ipsa blanditiis adipisci. Quas, non placeat. Iste facere, libero fuga nisi ipsam tenetur. Cum commodi itaque magni atque eos?</p>
-                    <p className='font-semibold my-2'>$250</p>
+                    <p className='font-semibold my-2'>${price*quantity}</p>
                     {/* <p className='mt-1 font-semibold'>size</p>
                     <div className='flex'>
                         <div className="border-[1px] border-gray-300 py-2 px-4 rounded-lg mr-1 ">S</div>
