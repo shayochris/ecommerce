@@ -31,12 +31,16 @@ export default function Navbar({ setLogin }) {
             <div onClick={()=>setmobilemenu(false)}
             className="md:hidden fixed top-0 left-0 bg-black/50 w-full h-full z-20">
               <div className="bg-white w-[300px] h-full p-2">
-                <div className="flex justify-between items-center">
+                <div className="flex justify-between items-center p-2 border-b-[1px] border-gray-300">
                   <p className="logo pb-2">Logo</p>
                   <AiOutlineClose/>
                 </div>
-                <hr />
-                <ul className='mt-2'>
+                <ul className='mt-2 p-2'>
+                  <li className='py-1 text-lg'>
+                    <Link className='flex items-center'>
+                      <AiOutlineHome className='h-8 mr-1'/> <span>Home</span>
+                    </Link>
+                  </li>
                   <li className='py-1 text-lg'>
                     <Link className='flex items-center'>
                       <AiOutlineShoppingCart className='h-8 mr-1'/> <span>cart</span>
@@ -50,11 +54,6 @@ export default function Navbar({ setLogin }) {
                   <li className='py-1 text-lg' onClick={()=>setLogin(true)}>
                     <Link className='flex items-center'>
                       <AiOutlineLogin className='h-8 mr-1'/> <span>SignIn</span>
-                    </Link>
-                  </li>
-                  <li className='py-1 text-lg'>
-                    <Link className='flex items-center'>
-                      <AiOutlineHome className='h-8 mr-1'/> <span>cart</span>
                     </Link>
                   </li>
                 </ul>
