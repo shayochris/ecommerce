@@ -13,7 +13,7 @@ export default function Navbar({ setLogin }) {
                     <Link to="/" className='navlink'>Home</Link>
                 </li>
                 <li>
-                    <Link to="/cart" className='navlink'>Cart</Link>
+                    <Link onClick={()=>setLogin(true)} className='navlink'>Cart</Link>
                 </li>
                 <li>
                     <Link to="/search" className='navlink'>Search</Link>
@@ -47,7 +47,7 @@ export default function Navbar({ setLogin }) {
                     </Link>
                   </li>
                   <li className='py-1 text-lg'>
-                    <Link className='flex items-center'>
+                    <Link to="/search" className='flex items-center'>
                       <AiOutlineSearch className='h-8 mr-1'/> <span>search</span>
                     </Link>
                   </li>

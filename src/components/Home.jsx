@@ -82,15 +82,17 @@ export default function Home() {
                         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-4">
                             {[1,2,3,4,5,6,7,8,9,10,11,12].map(n=>(
                                 <div key={n} className="">
-                                <div className="image-card md:h-60 h-48 bg-gray-200">
-                                    <img src={pic5} alt="" className="h-full w-full object-cover" />
+                                    <Link to="/product">
+                                        <div className="image-card md:h-60 h-48 bg-gray-200">
+                                            <img src={pic5} alt="" className="h-full w-full object-cover" />
+                                        </div>
+                                        <div>
+                                            <p className="font-semibold text-lg">Product name</p>
+                                            <p className="text-sm text-gray-700 font-thin">product description</p>
+                                            <p className="text-lg font-semibold">$ 1234</p>
+                                        </div>
+                                    </Link>
                                 </div>
-                                <div>
-                                    <p className="font-semibold text-lg">Product name</p>
-                                    <p className="text-sm text-gray-700 font-thin">product description</p>
-                                    <p className="text-lg font-semibold">$ 1234</p>
-                                </div>
-                            </div>
                             ))}
                         
                         </div>
@@ -112,11 +114,7 @@ export default function Home() {
                     <button className="button bg-black w-full mt-3 md:mt-0 md:w-auto md:ml-2">subscribe</button>
                 </form>
             </div>
-
-
-            {/* footer */}
-            
-            
+            {/* footer */}  
         </div>
         <Footer/>
     </div>
