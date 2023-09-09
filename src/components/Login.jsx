@@ -24,7 +24,7 @@ export default function Login() {
                 <form action="" className='p-2' onSubmit={handlesubmit}>
                     <h2 className="h5 mb-2">Sign In</h2>
                     {error &&
-                        <div className="bg-red-500 px-4 py-2 rounded-lg flex justify-between items-center">
+                        <div className="bg-red-300 px-4 py-2 rounded-lg flex justify-between items-center">
                             <p>{msg}</p>
                             <AiOutlineClose onClick={()=>setError(false)} className='w-4 h-4'/>
                         </div>
