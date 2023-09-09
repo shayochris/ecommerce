@@ -13,7 +13,7 @@ export default function Navbar() {
                     <Link to="/" className='navlink'>Home</Link>
                 </li>
                 <li>
-                    <Link className='navlink'>Cart</Link>
+                    <Link to="/login" className='navlink'>Cart</Link>
                 </li>
                 <li>
                     <Link to="/search" className='navlink'>Search</Link>
@@ -37,12 +37,12 @@ export default function Navbar() {
                 </div>
                 <ul className='p-2'>
                   <li className='py-1 text-lg'>
-                    <Link className='flex items-center'>
+                    <Link to="/" className='flex items-center'>
                       <AiOutlineHome className='h-8 mr-1'/> <span>Home</span>
                     </Link>
                   </li>
                   <li className='py-1 text-lg'>
-                    <Link className='flex items-center'>
+                    <Link to="/login" className='flex items-center'>
                       <AiOutlineShoppingCart className='h-8 mr-1'/> <span>cart</span>
                     </Link>
                   </li>
