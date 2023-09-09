@@ -1,45 +1,37 @@
-import React from 'react'
 import { Link } from 'react-router-dom'
-import { AiOutlineClose } from 'react-icons/ai'
+import Navbar from './Navbar';
 
-export default function Login({ setLogin,setRegister }) {
+export default function Login() {
   return (
-    <div className='bg-black/50 fixed w-full h-full top-0 left-0 z-10 flex items-center justify-center'>
-        <div className="container-sm bg-white p-2 rounded-lg">
-            <div className='text-end'>
-                <button onClick={()=>setLogin(false)} className=''>
-                    <AiOutlineClose className='h-8'/>
-                </button>
+    <div>
+        <Navbar/>
+        <div className='w-full flex justify-center mt-16'>
+            <div className="container-sm bg-white p-2 rounded-lg"> 
+                <form action="" className='p-2'>
+                    <h2 className="h5">Sign In</h2>
+                    <div className="my-3">
+                        {/* <label htmlFor="" className='font-semibold inline-block'>Email</label> */}
+                        <input type="email" className="input text-sm" placeholder='enter your email'required/>
+                    </div>
+                    <div className="my-3">
+                        {/* <label htmlFor="" className='font-semibold inline-block'>Password</label> */}
+                        <input type="password" className="input text-sm" placeholder='enter your password'required/>
+                    </div>
+                    <div className="my-3">
+                        <Link className='text-sm'>Forgot password?</Link>
+                    </div>
+                    <div className="my-4">
+                        <button className="button bg-black w-full">Login</button>
+                    </div>
+                    <div className="my-3 text-center text-sm">
+                       <p>Dont have an account?
+                        <span>
+                            <Link className='font-semibold' to="/register">Sign up</Link>
+                        </span>
+                       </p>
+                    </div>
+                </form>
             </div>
-            
-            <div className="text-center">
-                <h2 className="font-semibold text-2xl">Logo</h2>
-                <p className='text-gray-600 text-sm'>login with email & password</p>
-            </div>
-            <form action="" className='p-2'>
-                <div className="my-3">
-                    <label htmlFor="" className='font-semibold inline-block'>Email</label>
-                    <input type="email" className="input text-sm" placeholder='enter your email'/>
-                </div>
-                <div className="my-3">
-                    <label htmlFor="" className='font-semibold inline-block'>Password</label>
-                    <input type="password" className="input text-sm" placeholder='enter your password'/>
-                </div>
-                <div className="my-3">
-                    <Link className='text-sm'>Forgot password?</Link>
-                </div>
-                <div className="my-4">
-                    <button className="button bg-black w-full">Login</button>
-                </div>
-                <div className="my-3 text-center text-sm">
-                    <p>Dont have an Account?
-                        <button onClick={()=>{
-                            setLogin(false);
-                            setRegister(true);
-                        }}  className='font-semibold underline'>Register</button>
-                    </p>
-                </div>
-            </form>
         </div>
     </div>
   )

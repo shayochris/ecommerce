@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { AiOutlineMenu,AiOutlineShoppingCart,AiOutlineClose,AiOutlineSearch,AiOutlineLogin,AiOutlineHome} from 'react-icons/ai'
-export default function Navbar({ setLogin }) {
+export default function Navbar() {
   const [mobilemenu,setmobilemenu]=useState(false)
   return (
     <div className='fixed top-0 left-0 w-full border-b-[1px] border-gray-200 z-10 bg-white'>
@@ -13,13 +13,13 @@ export default function Navbar({ setLogin }) {
                     <Link to="/" className='navlink'>Home</Link>
                 </li>
                 <li>
-                    <Link onClick={()=>setLogin(true)} className='navlink'>Cart</Link>
+                    <Link className='navlink'>Cart</Link>
                 </li>
                 <li>
                     <Link to="/search" className='navlink'>Search</Link>
                 </li>
                 <li>
-                    <button onClick={()=>setLogin(true)} className='navlink'>SignIn</button>
+                    <Link to="/login" className='navlink'>Login</Link>
                 </li>
             </ul>
             <button onClick={()=>setmobilemenu(true)} className='md:hidden'>
@@ -51,8 +51,8 @@ export default function Navbar({ setLogin }) {
                       <AiOutlineSearch className='h-8 mr-1'/> <span>search</span>
                     </Link>
                   </li>
-                  <li className='py-1 text-lg' onClick={()=>setLogin(true)}>
-                    <Link className='flex items-center'>
+                  <li className='py-1 text-lg'>
+                    <Link to="/login" className='flex items-center'>
                       <AiOutlineLogin className='h-8 mr-1'/> <span>SignIn</span>
                     </Link>
                   </li>
