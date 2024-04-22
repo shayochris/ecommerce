@@ -6,11 +6,12 @@ import TopNav from '../components/TopNav'
 import { useDrawer } from '../hooks/useDrawer';
 
 export default function Home() {
-  const { DefaultDrawer, openDrawer } = useDrawer();
+  const { DefaultDrawer, openDrawer, closeDrawer } = useDrawer();
   return (
     <div className='wrapper font-poppins'>
       <TopNav  
         openDrawer ={openDrawer}
+        closeDrawer = {closeDrawer}
       />
       <div className="container-lg">
         <Products/>

@@ -1,18 +1,27 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Search from './Search';
+import Cart from './Cart';
+import Signin from './Signin';
 
-export default function MobileNav() {
+export default function MobileNav(props) {
   const navItems = [
     {
-      name: 'home', 
-      path: '/home', 
-    },
-    {
       name: 'search', 
+      onClick: e =>{
+        e.preventDefault();
+        props.closeDrawer();
+        props.openModal('search', <Search/>, 'md');
+      }
     },
     {
       name: 'cart', 
       path: '/messages', 
+      onClick: e =>{
+        e.preventDefault();
+        props.closeDrawer();
+        props.openModal('cart', <Cart/>, 'md');
+      }
     },
     {
       name: 'shop', 
@@ -24,7 +33,11 @@ export default function MobileNav() {
     },
     {
       name: 'signin', 
-      path: '/signin', 
+      onClick: e =>{
+        e.preventDefault();
+        props.closeDrawer();
+        props.openModal('search', <Signin/>, 'md');
+      } 
     },
   ]
   return (
@@ -33,7 +46,7 @@ export default function MobileNav() {
         navItems.map(item => (
           <div key={item.name} className='' >
             <Link onClick={item.onClick} to={`${item.path}`} className='flex-a ' >
-              <span className='hidden lg:block ml-2' >{item.name}</span>
+              <span className='my-2 capitalize' >{item.name}</span>
             </Link>
           </div>
         ))

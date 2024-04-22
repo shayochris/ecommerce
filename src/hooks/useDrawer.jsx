@@ -19,13 +19,16 @@ export const useDrawer = (props) => {
   const DefaultDrawer = () => {
     return (
       <div className=''>
-          <Drawer placement={placement} open={open} onClose={closeDrawer}  className='p-4' >
+          <Drawer placement={placement} open={open} onClose={closeDrawer}  className='' >
             <div>
-              <div className="flex-b">
+              <div className="flex-b border-b border-gray-300 p-4">
                 <p>Header</p>
                 <AiOutlineClose onClick={closeDrawer} className='icon' />
               </div>
-              {content}
+              <div className="p-4">
+                {content}
+              </div>
+              
             </div>
           </Drawer>
       </div>

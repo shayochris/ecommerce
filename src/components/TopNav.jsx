@@ -51,7 +51,15 @@ export default function TopNav(props) {
           </button>
         </div>
         <div className='lg:hidden' >
-          <IoMenu onClick={() => props.openDrawer( <MobileNav/>, 'left')} className='icon-md' />
+          <IoMenu 
+          onClick={() => 
+            props.openDrawer( 
+            <MobileNav 
+              openModal={openModal} 
+              closeDrawer = {props.closeDrawer}
+            />, 
+            'left')} 
+          className='icon-md' />
         </div>
       </div>
       <Modal/>
