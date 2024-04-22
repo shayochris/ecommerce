@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* flex */
+.flex-a{
+  @apply flex items-center;
+}
+.flex-b{
+  @apply flex items-center justify-between;
+}
+.flex-c{
+  @apply flex items-center justify-center;
+}
+
+/* containers */
+.container-xl{
+  @apply w-[95%] sm:w-[90%] mx-auto;
+}
+.wrapper{
+  @apply w-full h-screen text-black overflow-y-auto;
+}
+
+/* navigations */
+.navlink{
+  @apply ml-3 md:ml-6 hover:font-semibold capitalize;
+}
+
+/* icons */
+.icon-md{
+  @apply w-6 h-6;
+}
+.icon{
+  @apply w-5 h-5;
+}
+.icon-sm{
+  @apply w-4 h-4;
+}
+.btn{
+  @apply shadow-none hover:shadow-none capitalize text-[16px] font-normal py-3 outline-none;
+}
