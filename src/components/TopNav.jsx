@@ -10,7 +10,7 @@ import { useModal } from '../hooks/useModal';
 import Cart from './Cart';
 import Search from './Search';
 import Signin from './Signin';
-import MobileNav from './MobileNav';
+import MobileNavigation from './MobileNavigation';
 
 
 
@@ -53,12 +53,11 @@ export default function TopNav(props) {
         <div className='lg:hidden' >
           <IoMenu 
           onClick={() => 
-            props.openDrawer( 
-            <MobileNav 
-              openModal={openModal} 
-              closeDrawer = {props.closeDrawer}
-            />, 
-            'left')} 
+            openModal(
+              'logo', 
+              <MobileNavigation />, 
+              'xxl'
+            )} 
           className='icon-md' />
         </div>
       </div>

@@ -3,15 +3,16 @@ import { Link } from 'react-router-dom'
 import Search from './Search';
 import Cart from './Cart';
 import Signin from './Signin';
+import { useModal } from '../hooks/useModal';
 
-export default function MobileNav(props) {
+export default function MobileNavigation() {
+  const { openModal, Modal } = useModal();
   const navItems = [
     {
       name: 'search', 
       onClick: e =>{
         e.preventDefault();
-        props.closeDrawer();
-        props.openModal('search', <Search/>, 'md');
+        openModal('search', <Search/>, 'md');
       }
     },
     {
@@ -19,8 +20,7 @@ export default function MobileNav(props) {
       path: '/messages', 
       onClick: e =>{
         e.preventDefault();
-        props.closeDrawer();
-        props.openModal('cart', <Cart/>, 'md');
+        openModal('cart', <Cart/>, 'md');
       }
     },
     {
@@ -35,22 +35,24 @@ export default function MobileNav(props) {
       name: 'signin', 
       onClick: e =>{
         e.preventDefault();
-        props.closeDrawer();
-        props.openModal('search', <Signin/>, 'md');
+        openModal('signin', <Signin/>, 'md');
       } 
     },
   ]
   return (
     <div>
-      {
-        navItems.map(item => (
-          <div key={item.name} className='' >
-            <Link onClick={item.onClick} to={`${item.path}`} className='flex-a ' >
-              <span className='my-2 capitalize' >{item.name}</span>
-            </Link>
-          </div>
-        ))
-      }
+      <div className="">
+        {
+          navItems.map(item => (
+            <div key={item.name} className='' >
+              <Link onClick={item.onClick} to={`${item.path}`} className='flex-a ' >
+                <span className='my-2 capitalize' >{item.name}</span>
+              </Link>
+            </div>
+          ))
+        }
+      </div>
+      <Modal/>
     </div>
   )
 }

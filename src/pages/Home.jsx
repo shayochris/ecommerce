@@ -3,20 +3,18 @@ import Products from '../components/Products'
 import TopNav from '../components/TopNav'
 
 //hooks
-import { useDrawer } from '../hooks/useDrawer';
+import { useModal } from '../hooks/useModal';
 
 export default function Home() {
-  const { DefaultDrawer, openDrawer, closeDrawer } = useDrawer();
+  const { Modal, openModal, closeModal } = useModal();
   return (
     <div className='wrapper font-poppins'>
       <TopNav  
-        openDrawer ={openDrawer}
-        closeDrawer = {closeDrawer}
       />
       <div className="container-lg">
         <Products/>
       </div>
-      <DefaultDrawer/>
+      <Modal/>
     </div>
   )
 }

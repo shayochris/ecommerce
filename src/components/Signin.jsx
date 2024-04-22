@@ -3,8 +3,10 @@ import TextInput from './TextInput'
 import { Button } from '@material-tailwind/react'
 import { Link } from 'react-router-dom'
 import Signup from './Signup'
+import { useModal } from '../hooks/useModal'
 
-export default function Signin(props) {
+export default function Signin() {
+  const { openModal, Modal } = useModal();
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log('hello')
@@ -49,7 +51,7 @@ export default function Signin(props) {
             <span  
               className='font-semibold underline hover:cursor-pointer'
               onClick={() => {
-                props.openModal('signup', <Signup openModal={props.openModal} />, 'sm');
+                openModal('signup', <Signup/>, 'sm');
               }}
             >
               Signup
@@ -57,6 +59,7 @@ export default function Signin(props) {
           </p>
         </div>
       </form>
+      <Modal/>
     </div>
   )
 }
